@@ -46,6 +46,7 @@ BEGIN
 	WAIT FOR 0 ns;
 	expected1 := ((s_a+s_b)*42)-((s_c*s_d)*(s_a-s_e));
 	REPORT "First batch of inputs passed into the pipeline";
+	REPORT "Expecting " & integer'image(expected1) & " at the end of the pipeline";
 	WAIT FOR clk_period;
 	
 --	cycle 2
@@ -57,6 +58,7 @@ BEGIN
 	WAIT FOR 0 ns;
 	expected2 := ((s_a+s_b)*42)-((s_c*s_d)*(s_a-s_e));
 	REPORT "Second batch of inputs passed into the pipeline";
+	REPORT "Expecting " & integer'image(expected2) & " at the end of the pipeline";
    WAIT FOR clk_period;
 	 
 --	cycle 3 
@@ -69,6 +71,7 @@ BEGIN
 	WAIT FOR 0 ns;
 	expected3 := ((s_a+s_b)*42)-((s_c*s_d)*(s_a-s_e));
 	REPORT "Third batch of inputs passed into the pipeline";
+	REPORT "Expecting " & integer'image(expected3) & " at the end of the pipeline";
    WAIT FOR clk_period; 
 	
 -- cycle 4
